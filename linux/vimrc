@@ -40,6 +40,7 @@ set wrap
 set ffs=unix
 set foldmethod=marker
 set mouse=a
+set ttymouse=xterm2 " for tmux mouse mode
 " folding start
 set fdc=2
 set fcs+=fold:\     " set fold's fillchars to space 
