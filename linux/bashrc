@@ -10,6 +10,7 @@ fi
 
 # User specific aliases and functions
 # system environment {{{
+[ -e /usr/share/terminfo/x/xterm-256color ] && export TERM='xterm-256color'
 #export PS1='[\u@\h-\t \w]$ '
 export PS1='\[\e[1;36m\]\u\[\e[1;33m\]@\[\e[0;36m\]\h\[\e[0;33m\]-\[\e[0;36m\]\t \[\e[1;36m\]\w\[\e[1;33m\]\$\[\033[0m\] '
 #export PATH=".:${PATH}:${HOME}/bin"
@@ -20,7 +21,7 @@ export LANG='en_US.UTF-8'
 #}}}
 
 # keyboard {{{
-if [ $TERM = 'xterm' ]; then
+if [[ $TERM == *'xterm'* ]]; then
     bind '"\e[1~":beginning-of-line' # HOME
     bind '"\e[4~":end-of-line'       # END
 fi
