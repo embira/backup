@@ -138,3 +138,28 @@ nmap ,hu wbi<u><ESC>ea</i><ESC>bb
 nmap ,hs wbi<strong><ESC>ea</strong><ESC>bb
 nmap ,ht wbi<tt><ESC>ea</tt><ESC>bb
 nmap ,hx wbF<df>f<df>
+
+" 256 color scheme {
+"if &term=~"256color"
+    set t_Co=256
+    let python_highlight_all = 1
+    let c_gnu = 1
+    " SYNTAX HIGHLIGHTING
+    hi Comment      cterm=NONE      ctermfg=66  ctermbg=NONE
+    " STATUS
+    hi StatusLine   cterm=reverse   ctermfg=111 ctermbg=0
+    hi StatusLineNC cterm=reverse 	ctermfg=238	ctermbg=245
+    " INTERFACE
+    hi LineNr       cterm=NONE      ctermfg=240 ctermbg=NONE
+    hi VertSplit    cterm=NONE      ctermfg=110	ctermbg=NONE
+    " TABS
+    hi TabLine      cterm=NONE      ctermfg=109	ctermbg=238
+    hi TabLineFill  cterm=NONE      ctermfg=220	ctermbg=238
+    hi TabLineSel   cterm=NONE      ctermfg=82	ctermbg=NONE
+"endif
+" }
+
+"{+----------------------------------------- Embira Footer 1.6 ---------+
+" | vim<600:set et sw=4 ts=4 sts=4:                                     |
+" | vim600:set et sw=4 ts=4 sts=4 ff=unix cindent fdm=marker fmr={,}:   |
+" +---------------------------------------------------------------------+}
