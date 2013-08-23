@@ -10,7 +10,10 @@ fi
 
 # User specific aliases and functions
 # system environment {{{
-[ -e /usr/share/terminfo/x/xterm-256color ] && export TERM='xterm-256color'
+[ -e /usr/share/terminfo/x/xterm-256color ] && {
+    export TERM='xterm-256color'
+    export LS_COLORS="`echo $LS_COLORS | sed 's/;34:/;38;5;111:/g'`"
+}
 #export PS1='[\u@\h-\t \w]$ '
 export PS1='\[\e[1;36m\]\u\[\e[1;33m\]@\[\e[0;36m\]\h\[\e[0;33m\]-\[\e[0;36m\]\t \[\e[1;36m\]\w\[\e[1;33m\]\$\[\033[0m\] '
 #export PATH=".:${PATH}:${HOME}/bin"
