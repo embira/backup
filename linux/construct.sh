@@ -45,8 +45,13 @@ mkLink $cwd/etc/tmux.conf   $HOME/.tmux.conf
 read -p 'Do you want to install vim color scheme? [y/n]:' flag
 [ "$flag" = 'y' ] && mkVimColorScheme || echo 'Skip.'
 
-# enable bashrc
-source $HOME/.bashrc
+# mkdir dir_colors
+dircolors -p | grep xterm-256color >/dev/nul 2>&1 || {
+    echo -e '# Add xterm-256color\nTERM xterm-256color\n' > $HOME/.dir_colors
+    dircolors -p >> $HOME/.dir_colors
+ }
+
+echo -e '\nOver. \nThe ~/.bashrc should be reaload.\n'
 
 #{+----------------------------------------- Embira Footer 1.6 ---------+
 # | vim<600:set et sw=4 ts=4 sts=4:                                     |
