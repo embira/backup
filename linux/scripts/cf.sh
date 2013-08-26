@@ -92,7 +92,7 @@ touch $1
 if (test $? -eq 0); then
     HEADER=`echo $1 | sed -e 's/\./_/g' | awk '{print(toupper($0))}'`
     echo_header $FLAG $HEADER >> $1
-    footer.sh $FLAG >> $1
+    $(dirname $0)/footer.sh $FLAG >> $1
 else
     echo -e "touch $1 failed!\n"
 fi
