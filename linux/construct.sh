@@ -46,7 +46,7 @@ read -p 'Do you want to install vim color scheme? [y/n]:' flag
 [ "$flag" = 'y' ] && mkVimColorScheme || echo 'Skip.'
 
 # mkdir dir_colors
-dircolors -p | grep xterm-256color >/dev/nul 2>&1 || {
+dircolors -p | grep xterm-256color >/dev/null 2>&1 || {
     echo -e '# Add xterm-256color\nTERM xterm-256color\n' > $HOME/.dir_colors
     dircolors -p >> $HOME/.dir_colors
  }
