@@ -34,9 +34,12 @@ git config --global alias.last  'log -1 HEAD'
 git config --global alias.alias 'config --get-regexp alias'
 
 # ignore
-fpath="$(readlink -e $0)" && {
-    ln -sf ${fpath%/*}/gitignore ~/.gitignore
-    git config --global core.excludesfile   ~/.gitignore
+cwd="$(readlink -e $0 | xargs dirname)" && {
+    gign="${cwd%/*}/etc/gitignore"
+    [ -e $gign ] && {
+        ln -sf $gign ~/.gitignore
+        git config --global core.excludesfile ~/.gitignore
+    }
 }
 
 # confirm
