@@ -156,6 +156,9 @@ if &term =~ "256color"
     hi TabLine      cterm=NONE      ctermfg=109 ctermbg=238
     hi TabLineFill  cterm=NONE      ctermfg=220 ctermbg=238
     hi TabLineSel   cterm=NONE      ctermfg=82  ctermbg=NONE
+    " Syntax
+    hi Search       cterm=reverse
+    hi Statement    ctermfg=3
 endif
 " }
 
